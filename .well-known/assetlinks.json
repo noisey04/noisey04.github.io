@@ -1,0 +1,13 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.priyeshmayank.tallyset",
+      "sha256_cert_fingerprints": [
+        "0D:A0:E4:FE:38:06:3D:B0:22:0E:BC:E5:2C:18:95:25:09:4B:8D:E6:07:20:81:69:4A:91:D8:9E:B7:EE:25:09",
+        "32:80:11:89:F4:28:F3:D0:AE:D1:68:CC:42:B9:3B:13:D7:05:75:30:4F:9A:8B:C9:80:55:6B:7A:2E:01:6E:3C"
+      ]
+    }
+  }
+]
