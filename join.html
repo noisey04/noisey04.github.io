@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Join on MeFit</title>
+<meta name="description" content="You have an invite to train together or be coached on MeFit.">
+<meta name="robots" content="noindex">
+<style>
+  :root{--bg:#F2F2F7;--card:#fff;--text:#111114;--muted:#5b5b62;--line:#e5e5ea;--accent:#C6FF3D}
+  @media (prefers-color-scheme:dark){:root{--bg:#000;--card:#1c1c1e;--text:#f2f2f7;--muted:#a1a1a8;--line:#38383a}}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font:16px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+  main{max-width:520px;margin:0 auto;padding:28px 16px 40px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px}
+  .brand i{width:34px;height:34px;border-radius:10px;background:var(--accent);display:inline-flex;align-items:center;justify-content:center;font-style:normal;color:#111114}
+  h1{font-size:30px;line-height:1.15;margin:22px 0 4px;letter-spacing:-.02em}
+  .sub{color:var(--muted);margin:0 0 18px}
+  .btn{display:flex;align-items:center;justify-content:center;width:100%;min-height:54px;border-radius:16px;border:0;font:700 17px system-ui,sans-serif;text-decoration:none;cursor:pointer}
+  .primary{background:var(--accent);color:#111114}
+  .ghost{background:var(--card);color:var(--text);margin-top:10px}
+  .day{background:var(--card);border-radius:18px;padding:14px 16px;margin-top:12px}
+  .day b{display:block;margin-bottom:6px}
+  .ex{display:flex;justify-content:space-between;gap:12px;border-top:1px solid var(--line);padding:7px 0;font-size:15px}
+  .ex span:last-child{color:var(--muted);white-space:nowrap;font-variant-numeric:tabular-nums}
+  .note{color:var(--muted);font-size:14px;margin-top:16px}
+  .err{background:var(--card);border-radius:18px;padding:16px;margin-top:16px}
+</style>
+</head>
+<body>
+<main>
+  <div class="brand"><i>M</i>MeFit</div>
+  <div id="app"><h1>Opening your invite…</h1></div>
+  <p class="note">MeFit is a free gym log. Nothing is shared until you accept the invite in the app, and you can leave any time.</p>
+</main>
+<script>
+(function(){
+  'use strict';
+  var PKG = 'com.priyeshmayank.tallyset';
+  var app = document.getElementById('app');
+  function el(tag, cls, text){ var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+  var code = (location.hash || '').slice(1).toUpperCase().replace(/[^A-Z0-9]/g, '');
+  // Play keeps "join=CODE" through the install, so MeFit can open the invite on first launch.
+  var PLAY = 'https://play.google.com/store/apps/details?id=' + PKG + (code.length === 6 ? '&referrer=' + encodeURIComponent('join=' + code) : '');
+  app.textContent = '';
+  if (code.length !== 6){
+    app.appendChild(el('h1', null, 'This invite link is incomplete'));
+    app.appendChild(el('p', 'sub', 'Ask for the invite again and send the whole link.'));
+    var g = el('a', 'btn ghost', 'Get MeFit'); g.href = PLAY; app.appendChild(g);
+    return;
+  }
+  var android = /Android/i.test(navigator.userAgent);
+  var intentUrl = 'intent://join?c=' + code + '#Intent;scheme=mefit;package=' + PKG + ';S.browser_fallback_url=' + encodeURIComponent(PLAY) + ';end';
+  app.appendChild(el('h1', null, 'You’re invited to MeFit'));
+  app.appendChild(el('p', 'sub', 'A friend wants to train with you, or a trainer wants to coach you. Open MeFit to see who and accept.'));
+  if (android){
+    var open = el('a', 'btn primary', 'Open in MeFit'); open.href = intentUrl; app.appendChild(open);
+    var get = el('a', 'btn ghost', 'Don’t have MeFit? Get it free'); get.href = PLAY; app.appendChild(get);
+    app.appendChild(el('p', 'note', 'After installing, open MeFit and sign in. The invite opens by itself. If it doesn’t, enter code ' + code.slice(0, 3) + ' ' + code.slice(3) + ' in Profile.'));
+    setTimeout(function(){ location.href = 'intent://join?c=' + code + '#Intent;scheme=mefit;package=' + PKG + ';end'; }, 350);
+  } else {
+    app.appendChild(el('p', 'sub', 'Open this link on your Android phone. Invite code: ' + code.slice(0, 3) + ' ' + code.slice(3)));
+  }
+})();
+</script>
+</body>
+</html>
