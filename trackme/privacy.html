@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Track ME privacy policy</title><meta name="description" content="Privacy policy for the Track ME Android app.">
+<link rel="icon" href="data:image/svg+xml,&lt;svg width=&quot;72&quot; height=&quot;72&quot; role=&quot;img&quot; aria-label=&quot;Track ME logo&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 512 512&quot;&gt;  &lt;defs&gt;&lt;linearGradient id=&quot;g&quot; x1=&quot;0&quot; y1=&quot;0&quot; x2=&quot;0&quot; y2=&quot;1&quot;&gt;&lt;stop offset=&quot;0&quot; stop-color=&quot;%233E5463&quot;/&gt;&lt;stop offset=&quot;1&quot; stop-color=&quot;%237D909B&quot;/&gt;&lt;/linearGradient&gt;&lt;/defs&gt;  &lt;rect width=&quot;512&quot; height=&quot;512&quot; rx=&quot;112&quot; fill=&quot;url(%23g)&quot;/&gt;  &lt;path d=&quot;M160 112h192v296l-32-22-32 22-32-22-32 22-32-22-32 22z&quot; fill=&quot;%23FFFFFF&quot;/&gt;  &lt;path d=&quot;M206 262l36 36 70-78&quot; fill=&quot;none&quot; stroke=&quot;%233E5463&quot; stroke-width=&quot;26&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;/&gt;&lt;/svg&gt;">
+<style>
+:root{--bg:#F2F2F0;--ink:#111113;--muted:#5C5C60;--card:#fff;--hero:#3E5463}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+main{max-width:760px;margin:0 auto;padding:48px 20px 80px}
+h1{font-size:40px;font-weight:500;letter-spacing:-.02em;line-height:1.15;margin:16px 0 8px}
+h2{font-size:22px;font-weight:500;margin:36px 0 8px}h3{font-size:17px;margin:24px 0 4px}
+p,li{color:#2A2A2E}.muted{color:var(--muted)}a{color:var(--hero)}
+.card{background:var(--card);border-radius:18px;padding:20px 24px;margin:16px 0}
+ul{padding-left:20px}.btn{display:inline-block;background:var(--ink);color:#fff;text-decoration:none;padding:12px 22px;border-radius:999px;font-weight:500}
+footer{margin-top:48px;font-size:14px;color:var(--muted)}
+</style></head><body><main><h1>Track ME: Privacy Policy</h1>
+<p><em>Last updated: 20 November 2026</em></p>
+<p>Track ME ("the app") is published by <strong>Mayank Enterprises</strong> ("we"). This policy explains what the app accesses, why, and what happens to it.</p>
+<h2>Summary</h2>
+<ul>
+<li>Track ME is a bill and payment tracker. It reminds you before bills are due.</li>
+<li><strong>Everything stays on your phone.</strong> We do not run servers that receive your data, we have no user accounts, and we do not use analytics or advertising SDKs.</li>
+<li>Reading SMS and Gmail is <strong>optional</strong>. The app works fully with manual entry.</li>
+<li>Track ME <strong>never moves money</strong>. Payments happen in your own UPI app.</li>
+</ul>
+<h2>What the app accesses and why</h2>
+<h3>SMS (optional, only if you turn it on)</h3>
+<ul>
+<li><strong>What:</strong> SMS from registered business senders only (bank and biller sender IDs such as "VM-BSESRP" or "AX-HDFCBK"). Messages from personal phone numbers are never read.</li>
+<li><strong>Why:</strong> To find bills (biller, amount, due date, consumer number) and to recognise bank debit messages, so a bill can be marked paid automatically.</li>
+<li><strong>How:</strong> Messages are read and processed on your phone. The message text is <strong>not stored</strong>. Only the extracted bill details are saved in the app's private storage on your phone.</li>
+<li><strong>Sharing:</strong> SMS data is never uploaded, shared, sold or used for advertising.</li>
+<li><strong>Control:</strong> Turn it off anytime in Profile → Bill SMS, or remove the permission in Android Settings.</li>
+</ul>
+<h3>Gmail (optional, only if you connect it)</h3>
+<ul>
+<li><strong>What:</strong> Read-only access (<code>gmail.readonly</code>). The app searches only for bill-like emails from the last 4 months (subject words such as bill, invoice, premium, renewal, statement, payment due) and skips Promotions and Social.</li>
+<li><strong>When:</strong> Only when you tap Connect or Scan.</li>
+<li><strong>Why:</strong> To find bill amounts and due dates.</li>
+<li><strong>How:</strong> Emails are downloaded from Google directly to your phone, processed there, and discarded. Only the extracted bill details are saved. The access token is kept in memory and is not stored.</li>
+<li><strong>Sharing:</strong> Gmail data is never sent to us or anyone else, never used for advertising, never sold, and never read by humans.</li>
+<li><strong>Control:</strong> Disconnect anytime in Profile → Gmail (this revokes access with Google), or at <a href="https://myaccount.google.com/permissions">https://myaccount.google.com/permissions</a>.</li>
+</ul>
+<p><strong>Google API disclosure:</strong> Track ME's use and transfer of information received from Google APIs to any other app will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+<h3>Notifications</h3>
+<p>Used only for bill reminders and "new bill found" or "marked paid" alerts.</p>
+<h3>Installed UPI apps</h3>
+<p>The app checks whether a few UPI apps (Google Pay, PhonePe, Paytm, BHIM, Amazon Pay) are installed, so it can open the one you choose when you tap Pay. It does not read any data from those apps.</p>
+<h2>What we store</h2>
+<p>Bill name, category, amount, due date, repeat cycle, consumer or policy number, your chosen UPI app, and a history of payments you marked or that were matched. All of it is stored only on your phone, in the app's private storage. It is excluded from device backups.</p>
+<h2>Data retention and deletion</h2>
+<p>Data stays on your phone until you delete it. <strong>Profile → Delete all my data</strong> erases every bill, payment and setting and revokes Gmail access. Uninstalling the app also removes all its data.</p>
+<h2>Children</h2>
+<p>Track ME is not directed to children under 18.</p>
+<h2>Changes</h2>
+<p>We will update this page and the "Last updated" date if anything changes. If we ever start collecting data off the device, we will ask for your consent first.</p>
+<h2>Contact</h2>
+<p>Mayank Enterprises, India · priyeshmayank@gmail.com</p>
+<footer>Track ME is made by Mayank Enterprises, India · Contact: <a href="mailto:priyeshmayank@gmail.com">priyeshmayank@gmail.com</a> · <a href="/trackme/">Home</a> · <a href="/trackme/privacy.html">Privacy policy</a></footer>
+</main></body></html>
